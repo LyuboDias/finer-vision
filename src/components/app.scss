@@ -1,6 +1,7 @@
 body {
   background-color: #cfe1ff;
-  h5 {
+  font-size: 12px;
+  h2 {
     margin: 0;
   }
 }
@@ -13,11 +14,12 @@ body {
 }
 
 .inner-wrap {
-  width: 700px;
+  width: 600px;
   margin: 0 auto;
   background-color: white;
   border-radius: 8px;
   padding: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .button {
@@ -41,6 +43,16 @@ body {
 .card-body {
   padding: 10px;
   border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.next-div {
+  height: inherit;
+  width: 30%;
+  display: flex;
+  justify-content: end;
+  align-items: end;
 }
 
 .next-btn {
@@ -53,4 +65,40 @@ body {
   &:hover {
     background-color: #7771b9;
   }
+}
+
+.form-control {
+  border-radius: 8px;
+}
+
+.input-wrap {
+  width: 139px;
+  margin-bottom: 10px;
+  padding: 5px;
+  select {
+    background-color: white;
+    padding: 4px;
+    border-radius: 6px;
+    border: none;
+  }
+}
+
+.first-wrap {
+  width: 70%;
+  flex-wrap: wrap;
+  margin-right: 0;
+}
+
+.dob {
+  display: flex;
+  flex-direction: row;
+  input {
+    width: 30px;
+    margin: 2px;
+  }
+}
+
+.textarea {
+  width: 300px;
+  height: 150px !important;
 }
