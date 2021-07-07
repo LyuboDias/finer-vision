@@ -1,0 +1,56 @@
+body {
+  background-color: #cfe1ff;
+  h5 {
+    margin: 0;
+  }
+}
+
+.outer-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.inner-wrap {
+  width: 700px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.button {
+  background-color: #fba900;
+  width: 100%;
+  text-align: left;
+  border-radius: 8px;
+  color: white;
+  &:hover {
+    background-color: #ffb625;
+    color: white;
+  }
+}
+
+.card {
+  background-color: #dedede;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.card-body {
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.next-btn {
+  background-color: #5b53b0;
+  color: white;
+  padding: 8px;
+  border-radius: 16px;
+  width: 100px;
+  border: none;
+  &:hover {
+    background-color: #7771b9;
+  }
+}

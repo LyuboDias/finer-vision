@@ -1,56 +1,140 @@
-import React, { Component } from 'react';
-import giphy from 'giphy-api';
-
-import SearchBar from './search_bar';
-import Gif from './gif';
-import GifList from './gif_list';
-
-const GIPHY_API_KEY = 'AdGBe9cji49FNC0yrPZDREqpnLbStU3n';
-
+import React, { Component } from "react";
+import "./app.scss";
 
 class App extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      gifs: [],
-      selectedGifId: "ykvLH7H2fKQE",
-    };
+    this.state = {};
   }
 
-
-  search = (query) => {
-    giphy({ apiKey: GIPHY_API_KEY, https: true }).search({
-      q: query,
-      rating: 'g',
-      limit: 30
-    }, (error, result) =>  {
-      this.setState({
-        gifs: result.data
-      });
-    });
-  }
-
-   selectGif = (id) => {
-    this.setState({
-      selectedGifId: id
-    });
-  }
-
-  render () {
-
+  render() {
     return (
-      <div>
-        <div className="left-scene">
-          <SearchBar searchFunction={this.search} />
-          <h1 className="text-center">Your List of Gifs</h1>
-          <p className="text-center text-muted">Choose from the list on the right, than click and safe gifs into your list</p>
-          <div className="selected-gif">
-            <Gif id={this.state.selectedGifId} />
+      <div className="outer-wrap">
+        <div className="inner-wrap">
+          <div id="accordion">
+            <div className="card">
+              <div className="card-header" id="headingOne">
+                <h5 className="mb-0">
+                  <button
+                    className="btn btn-link button "
+                    data-toggle="collapse"
+                    data-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Step 1: Your details
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapseOne"
+                className="collapse show"
+                aria-labelledby="headingOne"
+                data-parent="#accordion"
+              >
+                <div className="card-body">
+                  <div className="details">
+                    <form>
+                      <div>
+                        <label>First Name</label>
+                        <input type="text" name="first-name" />
+                      </div>
+                      <div>
+                        <label>Surname</label>
+                        <input type="text" name="surname" />
+                      </div>
+                      <div>
+                        <label>Email Address:</label>
+                        <input type="text" name="email" />
+                      </div>
+                    </form>
+                    <button className="next-btn">Next ></button>
+                  </div>
+                  {/* ------------------------- */}
+                </div>
+              </div>
+            </div>
+            <div className="card">
+              <div className="card-header" id="headingOne">
+                <h5 className="mb-0">
+                  <button
+                    className="btn btn-link button "
+                    data-toggle="collapse"
+                    data-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Step 1: Your details
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapseOne"
+                className="collapse show"
+                aria-labelledby="headingOne"
+                data-parent="#accordion"
+              >
+                <div className="card-body">
+                  <div>
+                    <form>
+                      <div>
+                        <label>Telephone number</label>
+                        <input type="text" name="number" />
+                      </div>
+                      <div>
+                        <select>
+                          <option value="" disabled selected>
+                            Select your gender
+                          </option>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label>Date of birth:</label>
+                        <input type="text" name="dob-day" />
+                        <input type="text" name="dob-month" />
+                        <input type="text" name="dob-year" />
+                      </div>
+                    </form>
+                    <button className="next-btn">Next ></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="card">
+              <div className="card-header" id="headingOne">
+                <h5 className="mb-0">
+                  <button
+                    className="btn btn-link button "
+                    data-toggle="collapse"
+                    data-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Step 1: Your details
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapseOne"
+                className="collapse show"
+                aria-labelledby="headingOne"
+                data-parent="#accordion"
+              >
+                <div className="card-body">
+                  <div>
+                    <div>
+                      <label htmlFor="text">Comments</label>
+                      <textarea></textarea>
+                    </div>
+                    <button className="next-btn">Next ></button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="right-scene">
-          <GifList gifs={this.state.gifs} selectGif={this.selectGif}/>
         </div>
       </div>
     );
